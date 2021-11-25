@@ -1,4 +1,4 @@
-open_proj seg7.xpr
+open_proj tutorial1.xpr
 
 set run_name impl_1
 set cpu_count 4
