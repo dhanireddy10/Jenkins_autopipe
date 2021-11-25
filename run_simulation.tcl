@@ -1,4 +1,4 @@
-open_proj seg7.xpr
+open_proj tutorial1.xpr
 
 set sim_fileset sim_1
 
