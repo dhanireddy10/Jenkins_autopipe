@@ -154,7 +154,7 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
- [file normalize "$origin_dir/../blinky.v" ]\
+ [file normalize "$origin_dir/../tutorial1/blinky.v" ]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 
