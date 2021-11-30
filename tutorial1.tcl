@@ -177,7 +177,7 @@ if {[string equal [get_filesets -quiet constrs_1] ""]} {
 set obj [get_filesets constrs_1]
 
 # Add/Import constrs file and set constrs file properties
-set file "[file normalize "$origin_dir/../blinky.xdc"]"
+set file "[file normalize "$origin_dir/../tutorial1/blinky.xdc"]"
 set file_imported [import_files -fileset constrs_1 [list $file]]
 set file "$origin_dir/../blinky.xdc"
 set file_obj [get_files -of_objects [get_filesets constrs_1] [list "*$file"]]
