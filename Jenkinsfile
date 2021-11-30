@@ -17,7 +17,7 @@ pipeline {
           userRemoteConfigs: [[
             url: 'https://github.com/dhanireddy10/Jenkins_autopipe.git']]])
             sh 'pwd'
-            sh '/bin/bash -l create_project.sh'
+            sh 'vivado -mode batch -source tutorial1.tcl'
 
       }
     }
