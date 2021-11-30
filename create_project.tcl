@@ -23,8 +23,8 @@
 # 2. The following source(s) files that were local or imported into the original project.
 #    (Please see the '$orig_proj_dir' and '$origin_dir' variable setting below at the start of the script)
 #
-#    "/home/akhil/tutorial1/tutorial1.srcs/sources_1/new/blinky.v"
-#    "/home/akhil/tutorial1/tutorial1.srcs/constrs_1/new/blinky.xdc"
+#  
+#  
 #
 # 3. The following remote source files that were added to the original project:-
 #
@@ -36,8 +36,8 @@
 proc checkRequiredFiles { origin_dir} {
   set status true
   set files [list \
-   "/home/akhil/tutorial1/tutorial1.srcs/sources_1/new/blinky.v" \
-   "/home/akhil/tutorial1/tutorial1.srcs/constrs_1/new/blinky.xdc" \
+   "blinky.v" \
+   "blinky.xdc" \
   ]
   foreach ifile $files {
     if { ![file isfile $ifile] } {
@@ -154,7 +154,7 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
- [file normalize "${origin_dir}/tutorial1/tutorial1.srcs/sources_1/new/blinky.v" ]\
+ [file normalize "${origin_dir}/blinky.v" ]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 
@@ -177,16 +177,16 @@ if {[string equal [get_filesets -quiet constrs_1] ""]} {
 set obj [get_filesets constrs_1]
 
 # Add/Import constrs file and set constrs file properties
-set file "[file normalize "$origin_dir/tutorial1/tutorial1.srcs/constrs_1/new/blinky.xdc"]"
+set file "[file normalize "$origin_dir/blinky.xdc"]"
 set file_imported [import_files -fileset constrs_1 [list $file]]
-set file "new/blinky.xdc"
+set file "blinky.xdc"
 set file_obj [get_files -of_objects [get_filesets constrs_1] [list "*$file"]]
 set_property -name "file_type" -value "XDC" -objects $file_obj
 
 # Set 'constrs_1' fileset properties
 set obj [get_filesets constrs_1]
-set_property -name "target_constrs_file" -value "[get_files *new/blinky.xdc]" -objects $obj
-set_property -name "target_ucf" -value "[get_files *new/blinky.xdc]" -objects $obj
+set_property -name "target_constrs_file" -value "[get_files *blinky.xdc]" -objects $obj
+set_property -name "target_ucf" -value "[get_files *blinky.xdc]" -objects $obj
 
 # Create 'sim_1' fileset (if not found)
 if {[string equal [get_filesets -quiet sim_1] ""]} {
