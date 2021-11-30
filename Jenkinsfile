@@ -44,6 +44,9 @@ pipeline {
     
   }
   post {
+    success {
+      echo 'Process finished successfully!'
+    }
     failure {
       emailext attachLog: true,
       body: '''Project name: $PROJECT_NAME
